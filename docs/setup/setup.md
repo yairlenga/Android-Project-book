@@ -35,8 +35,9 @@ Markdown הוא דרך פשוטה לכתיבת **תיעוד טכני מובנה 
 ## Summary
 
 - בדוק שיש לך גרסת חדשה של Android Studio. צריך להיות: Android Studio Quail 4 | 2026.1.4
-- שנה את תצוגת ה MARKDOWN ל- Google Chromium
+- התקן את "JCEF Plugin" של JetBrain
 - התקן את "Mermaid Plugin" של JetBrain
+- שנה את תצוגת ה MARKDOWN ל- Google Chromium
 - הגדר תקיית "DOCS" ל כתיבת מסמכים
 - בדוק את השינויים
 
@@ -47,29 +48,35 @@ Markdown הוא דרך פשוטה לכתיבת **תיעוד טכני מובנה 
 ### 1. Check Android Studio Version.
 
 Use "Help ... About" to check the version of your Android Studio.
-Should be `Androi Studio Quail 4 | 2026.1.4`
+Should be one of
+1. `Android Studio Quail 4 | 2026.1.4` OR
+2. `Android Studio Rabbit 1 | 2026.2.1`
 
-![Check Android Version](images/androdi-studio-version.png)
+Please avoid "Canary", "RC" releases - take only stable versions, or "patch-*" versions.
+
+![Android Studio - Quail Version](images/quail-version.png)
+![Android Studio - Rabbit Version](images/rabbit-version.png)
+
+### 2. Install the `JCEF` plugin
+
+The `JCEF Plugin` plugin provides web browser integration based on JCEF, a framework for embedding Chromium-based browsers in Java applications.
+
+1. Choose "File ... Setting ... Plugins
+2. Enter "Mermaid" - locate the `Mermaid` plugin provided by Jetbrains
+3. Click "install".
+4. Do not install any of the other plugins that are labeled "Mermaid".
+
+![JCEF Plugin](images/jcef-plugin.png)
+
 
 ### 2. Configure the Chrome Preview 
 
 The default runtime for Android Studio is not configured for working with complex HTML.
-There is an option to leverage the Chrome engine, making it possible to view complex documents with images, Right-To-Left text, etc.  
-
-1. Select **Ctrl/Shift/A**, and then choose "Choose Boot Runtime for the IDE",
-
-![Choose Boot Java Runtime](images/jcef-runtime.png)
-
-1. Select "25.0.4 JetBrains Runtime JBR with JCEF". Double check the you choose a version without "debug" or "fastdebug" !
-2. Click "OK".
-3. Android Studio will download he runtime, and after few seconds will offer to restart, accept the restart
-
-![Select JCEF version](images/jcef-version.png)
-
-After restart, change Android Studio to use Chrome for displaying markdown.
+There is an option to leverage the Chrome engine, making it possible to view complex documents with images, Right-To-Left text, etc.
 
 1. Select "File ... Setting ... Markdown".
-2. In the "Preview Rendering Engine", choose "Chromimum Browser"
+2. Check if the `Preview Rendering Engine`, is `Chromimum Browser` (and NOT `Compose (Experimentl)`)
+3. Possible it's already set, in this case, no need to do anything.
 
 ![choose-chrome-preview](images/Choose-Chrome.png)
 
@@ -84,14 +91,14 @@ The `Mermaid` tool supports diagrams such as flowcharts, sequence diagrams, stat
 
 ![Mermaid Plugin](images/mermaid-plugin.png)
 
-### 3. Create "docs" folder - next to the "app" folder
+### 4. Create "docs" folder - next to the "app" folder
 
  Change to "Project File View", and use "File ... New ... Directory" to create a directory "docs" next to the "app" folder.
 
 ![Create docs folder](images/docs-folders.png)
 
 
-## Test
+## 5. Test
 
 Create "test.md" file inside the newly create "docs" folder, and paste the test file into it. It should look like below
 
