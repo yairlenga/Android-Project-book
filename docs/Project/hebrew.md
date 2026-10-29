@@ -18,4 +18,20 @@ img {
     border: 1px solid #888;
     padding: 4px;
 }
+
+h1 {
+    color: MidnightBlue;
+}
+
+h2 {
+    color: SteelBlue;
+}
+
+h3 {
+    color: DarkSlateGray;
+}
+
+h4 {
+    color: SlateGray;
+}
 </style>

@@ -18,7 +18,6 @@ img {
     border: 1px solid #888;
     padding: 4px;
 }
-</style>
 
 h1 {
     color: MidnightBlue;
@@ -35,6 +34,9 @@ h3 {
 h4 {
     color: SlateGray;
 }
+
+</style>
+
 
 <a id="cover"></a>
 # שער
